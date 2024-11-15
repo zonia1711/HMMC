@@ -1,5 +1,4 @@
-
-import 'package:disenos/widgets/card_table.dart';
+import 'package:disenos/screens/modulos_screen.dart';
 import 'package:disenos/widgets/custom_botton_navigation.dart';
 import 'package:disenos/widgets/inicio_screen.dart';
 import 'package:disenos/widgets/page_title.dart';
@@ -42,7 +41,7 @@ class _HomeBody extends StatelessWidget {
           PageTitle(),
 
           //Card table
-          CardTable()
+          Modulos()
 
         ],
       ),

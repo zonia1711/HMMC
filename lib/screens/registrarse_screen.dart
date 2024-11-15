@@ -6,27 +6,111 @@ class Registrarse extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Inicio(),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
 
-            SizedBox(height: 20,),
-
-            Text('Registrarse', style: TextStyle(fontSize: 13, color: Colors.blue), ),
-
-            SizedBox(height: 10,),
-            // Icon(Icons.keyboard_arrow_down,size: 70,color: Color.fromARGB(255, 65, 54, 54),),
-            Transform.translate(offset: Offset(-10, 1000),),
-            Image(image: AssetImage('assets/japones.png'), height: 100, width: 100, ),
-          ],
-        
         ),
-        
-      )
-      );
+        body: SafeArea(
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+
+                Inicio(),
+                SizedBox(height: 20,),
+
+                CustomField()
+                ], ),
+                   ), ), 
+                   ));
+  }
+}
+
+class CustomField extends StatelessWidget {
+  const CustomField({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text('Registrarse', style: TextStyle(fontSize: 18, color: Colors.blue, fontWeight: FontWeight.bold),),
+
+
+        Padding(padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+        child: TextField(decoration: InputDecoration(
+          border: OutlineInputBorder( 
+            borderSide: BorderSide(width: 3, color:Colors.blue),
+            borderRadius: BorderRadius.circular(20)),
+          labelText: 'Nombre'),
+        ),
+        ),
+
+        Padding(padding: EdgeInsets.symmetric(horizontal: 8,vertical: 16),
+         child: TextField(decoration: InputDecoration(
+          border: OutlineInputBorder(
+            borderSide: BorderSide(width: 3, color: Colors.blue),
+            borderRadius: BorderRadius.circular(20)),
+            labelText: 'Apellido'),
+        ),
+        ),
+
+        Padding(padding: EdgeInsets.symmetric(horizontal: 8,vertical: 16),
+         child: TextField(decoration: InputDecoration(
+          border: OutlineInputBorder(
+            borderSide: BorderSide(width: 3, color: Colors.blue),
+            borderRadius: BorderRadius.circular(20),),
+            labelText: 'Email' ),
+            ),
+            ),
+
+        Padding(padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+           child: TextField(decoration: InputDecoration(
+           border: OutlineInputBorder(
+            borderSide: BorderSide(width: 3, color: Colors.blue),
+            borderRadius: BorderRadius.circular(20),),
+            labelText: 'Empresa'),
+         ),
+         ),
+
+        Padding(padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+        child: TextField(decoration: InputDecoration(
+          border: OutlineInputBorder(
+            borderSide: BorderSide(width: 3, color: Colors.blue),
+            borderRadius: BorderRadius.circular(20),),
+            labelText: 'Empresa'),
+            ),
+            ),
+
+       Padding(padding: EdgeInsets.symmetric(horizontal: 8,vertical: 16),
+        child: TextField(decoration: InputDecoration(
+          border: OutlineInputBorder(
+            borderSide: BorderSide(width: 8, color: Colors.blue),
+            borderRadius: BorderRadius.circular(20),),
+            labelText: 'Nit'),
+            ),
+            ),
+       Padding(padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+       child: TextField(decoration: InputDecoration(
+        border: OutlineInputBorder(
+          borderSide: BorderSide(width: 3,color: Colors.blue),
+          borderRadius: BorderRadius.circular(20),),
+        labelText: 'Telefono'),
+        ),
+        ),
+        Column(
+          children: [
+            ElevatedButton(onPressed: () {},
+             child: Text('Registrarse'),
+             style: ElevatedButton.styleFrom(
+              foregroundColor: Colors.white,
+              backgroundColor: const Color.fromARGB(255, 33, 82, 243)
+             ),)
+          ],
+        ),
+          
+      ],
+    );
   }
 }

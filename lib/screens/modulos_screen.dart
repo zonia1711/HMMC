@@ -2,8 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-class CardTable extends StatelessWidget {
-  const CardTable({super.key});
+class Modulos extends StatelessWidget {
+  const Modulos({super.key});
 
   @override
   Widget build(BuildContext context) {
